@@ -1,4 +1,8 @@
 # Clone this project
+`git clone https://github.com/wnelson01/sproutspot.git`
+
+# Enter Project
+`cd sproutspot`
 
 # Install Dependencies
 `npm install`
@@ -6,8 +10,7 @@
 # Seed The Database
 `npx ts-node seed.ts`
 
-# Example Post Request
-
+# Example Post Request    
     curl -X POST \
     http://localhost:3000/plant \
     -H 'Content-Type: application/json' \
@@ -26,3 +29,22 @@
         "uses": "Ornamental",
         "description": "Pothos, also known as Golden Pothos, is a tropical plant known for its long, trailing vines and heart-shaped leaves. It is often grown as a houseplant due to its tolerance for low light conditions."
     }'
+
+```mermaid
+classDiagram
+    class Plant{
+        +name: String
+        +family: String
+        +genus: String
+        +species: String
+        +commonName: String
+        +location: String
+        +climate: String
+        +soilType: String
+        +waterRequirements: String
+        +lightRequirements: String
+        +propagationMethod: String
+        +uses: String
+        +description: String
+    }
+```
