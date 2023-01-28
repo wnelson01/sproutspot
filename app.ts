@@ -7,7 +7,7 @@ app.use(express.json());
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Welcome To Sprout Spot');
 });
 
 app.get('/plants', async (req, res) => {
@@ -47,6 +47,25 @@ app.post('/plant', async (req, res) => {
       uses,
       description
     }
+  });
+  res.json(plant);
+});
+
+app.delete('/plant/:id', async (req, res) => {
+  const { id } = req.params;
+  const plant = await prisma.plant.delete({
+    where: {
+      id: Number(id)
+    },
+  });
+  res.json(plant);
+});
+
+app.get('/plant/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const plant = await prisma.plant.findUnique({
+    where: { id: Number(id) },
   });
   res.json(plant);
 });
