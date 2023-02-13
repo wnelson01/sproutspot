@@ -53,3 +53,20 @@ classDiagram
         +description: String
     }
 ```
+
+# UML Sequence
+```mermaid
+sequenceDiagram
+    project->>+service: post request To /plant
+    service-->>-project: service responds with the post request's body
+    project->>+service: get request to /plants
+    service-->>-project: service responds with all plants
+    project->>+service: get request to /plant/<id>
+    service-->>-project: service responds with plant corresponding to <id>
+    project->>+service: delete request to /plant/<id>
+    service-->>-project: service responds with the plant data that was deleted
+    project->>+service: get request to /plants
+    service-->>-project: deleted plant is missing from list
+    project->>+service: get request to /plant/<id>
+    service-->project: nothing to return since the plant was deleted
+```
