@@ -13,20 +13,21 @@
     http://localhost:3000/plant \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Pothos",
-        "family": "Araceae",
-        "genus": "Epipremnum",
-        "species": "Epipremnum aureum",
-        "commonName": "Golden Pothos",
-        "location": "Indoor, low light",
-        "climate": "Tropical, subtropical",
-        "soilType": "Well-draining, humus-rich soil",
-        "waterRequirements": "Regular watering, once a week",
-        "lightRequirements": "Indoor, low light",
-        "propagationMethod": "Stem cuttings",
-        "uses": "Ornamental",
-        "description": "Pothos, also known as Golden Pothos, is a tropical plant known for its long, trailing vines and heart-shaped leaves. It is often grown as a houseplant due to its tolerance for low light conditions."
+        "name": "Ponytail Palm",
+        "family": "Agavaceae",
+        "genus": "Beaucarnea",
+        "species": "Beaucarnea recurvata",
+        "commonName": "Ponytail Palm",
+        "location": "Indoor, outdoor",
+        "climate": "Desert",
+        "soilType": "Well-draining, sand-based soil",
+        "waterRequirements": "Infrequent watering, every 2-3 weeks",
+        "lightRequirements": "Bright, indirect light",
+        "propagationMethod": "Offsets or seed",
+        "uses": "Ornamental, air purification",
+        "description": "Ponytail Palm, also known as Elephant's Foot, is a desert plant known for its distinctive, balloon-like trunk and long, delicate leaves. It is a low-maintenance plant and can be grown both indoors and outdoors. Its water-storing trunk also makes it tolerant to drought conditions."
     }'
+
 ## Get
 Navigate to `http://localhost:3000/plants` to get all plants or `http://localhost:3000/plant/:id` to get a single plant
 

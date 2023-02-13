@@ -1,10 +1,22 @@
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
+import multer from 'multer';
 
 const prisma = new PrismaClient();
 const app = express();
 app.use(express.json());
 const port = 3000;
+
+const store = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'images/')
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now());
+  },
+});
+
+const upload = multer({ storage: store });
 
 app.get('/', (req, res) => {
   res.send('Welcome To Sprout Spot');
@@ -15,7 +27,8 @@ app.get('/plants', async (req, res) => {
   res.json(plants);
 });
 
-app.post('/plant', async (req, res) => {
+app.post('/plant', upload.single('image'), async (req, res) => {
+  console.log(req.body)
   const {
     name,
     family,
@@ -48,6 +61,7 @@ app.post('/plant', async (req, res) => {
       description
     }
   });
+  console.log(req.file);
   res.json(plant);
 });
 
