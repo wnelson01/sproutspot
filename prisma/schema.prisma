@@ -25,4 +25,5 @@ model Plant {
   propagationMethod   String
   uses                String
   description         String
+  imagePath           String?
 }
