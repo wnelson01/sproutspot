@@ -62,7 +62,24 @@ let plants = [
     propagationMethod: 'Rhizome division',
     uses: 'Ornamental',
     description: 'Alocasia Polly, also known as the Elephant Ear Plant, is a tropical plant known for its large, arrow-shaped leaves and vibrant green color.'
-  }];
+  },
+  {
+    name: "Anthurium warocqueanum",
+    family: "Araceae",
+    genus: "Anthurium",
+    species: "Anthurium warocqueanum",
+    commonName: "Queen Anthuriun",
+    location: "Indoor, indirect bright light",
+    climate: "Tropical",
+    soilType: "Well-draining soil, low in organic matter",
+    waterRequirements: "Moderate watering, once or twice a week",
+    lightRequirements: "Indoor, bright, indirect light",
+    propagationMethod: "division",
+    uses: "Ornamental",
+    description: "Anthurium warocqueanum, also known as Queen Anthurium, is a tropical plant known for its striking, dark green foliage and shiny, white veins. It is often grown as a houseplant due to its unique appearance and fulfilling challenge of care.",
+    imagePath: "images/anthurium_warocqueanum.png",
+  },
+];
 
 async function main () {
   for (let plant of plants) {

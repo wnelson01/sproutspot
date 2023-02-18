@@ -5,6 +5,7 @@ import multer from 'multer';
 const prisma = new PrismaClient();
 const app = express();
 app.use(express.json());
+app.use('/images', express.static('images'))
 const port = 3000;
 
 const store = multer.diskStorage({
@@ -77,10 +78,11 @@ app.delete('/plant/:id', async (req, res) => {
 
 app.get('/plant/:id', async (req, res) => {
   const { id } = req.params;
-
+  
   const plant = await prisma.plant.findUnique({
     where: { id: Number(id) },
   });
+
   res.json(plant);
 });
 
