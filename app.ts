@@ -45,6 +45,7 @@ app.post('/plant', upload.single('image'), async (req, res) => {
     uses,
     description
   } = req.body;
+  let imagePath = req.file?.path;
   const plant = await prisma.plant.create({
     data: {
       name,
@@ -59,7 +60,8 @@ app.post('/plant', upload.single('image'), async (req, res) => {
       lightRequirements,
       propagationMethod,
       uses,
-      description
+      description,
+      imagePath
     }
   });
   console.log(req.file);

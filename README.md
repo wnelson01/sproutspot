@@ -4,7 +4,6 @@
 - `npm install`
 - `echo 'DATABASE_URL="file:./dev.db"' > .env` to let prisma know where to create the sqlite database
 - run `npx prisma migrate dev --name init` to create the database
-- run `npx ts-node scripts/seed.ts` to populate the database with some starting data 
 - run `npx ts-node app.ts` (or `npx nodemon app.ts`) to start the server locally on port 3000
 - the database contents can be viewed locally by running `npx prisma studio`
 
