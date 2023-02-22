@@ -17,7 +17,7 @@ function Plant({ plant }) {
       <p>{plant.propagationMethod}</p>
       <p>{plant.uses}</p>
       <p>{plant.description}</p>
-      <p>http://localhost:3000/{plant.imagePath}</p>
+      <p>{process.env.SERVICE || 'http://localhost:3000/'}{plant.imagePath}</p>
     </div>
   );
 }
